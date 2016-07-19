@@ -1,0 +1,146 @@
+// Built on top of http://codepen.io/2tone/pen/vOLrqy
+
+@atomSize: 45rem;
+
+.atom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(.4);
+  animation: subeybaja 1s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes subeybaja {
+  from {
+    top: 46%;
+  }
+
+  to {
+    top: 54%;
+  }
+
+}
+
+.nucleo {
+  height: @atomSize;
+  width: @atomSize;
+  background: #111;
+  border-radius: 100%;
+  position: absolute;
+  margin: -@atomSize/2 0 0 -@atomSize/2;
+  box-shadow: inset -@atomSize/6 -@atomSize/6 @atomSize/3 #333;
+  border: 1px solid #111;
+}
+
+.electron {
+  width: @atomSize/6;
+  height: @atomSize/6;
+  position: absolute;
+  background: #222;
+  margin: -@atomSize/15 0 0 -@atomSize/15;
+  left: -@atomSize*3/2;
+  border-radius: 100%;
+  animation: movimiento 2s ease-in-out infinite,
+  agrandar 2s linear infinite;
+  z-index: 1;
+}
+
+
+@keyframes movimiento {
+
+  49.9% {
+    z-index: 1;
+  }
+  50% {
+    left:@atomSize*3/2;
+    z-index: -1;
+  }
+
+  100% {
+    z-index: -1;
+  }
+
+}
+
+@keyframes agrandar {
+
+
+  25% {
+    transform: scale(1.9);
+  }
+
+
+  75% {
+    transform: scale(0.6);
+  }
+
+}
+
+.electron:nth-child(2) {display: none;}
+.electron:nth-child(3), .electron:nth-child(6){
+  animation: movimiento 1.7s ease-in-out infinite,
+  agrandar 1.7s linear infinite ,
+  movimiento2 1.8s ease-in-out infinite;
+  top: -@atomSize;
+}
+
+@keyframes movimiento2 {
+
+  50% {
+    top: @atomSize;
+  }
+}
+
+.electron:nth-child(4), .electron:nth-child(7) {
+  animation: agrandar 1.7s linear infinite ,
+  movimiento2 1.6s ease-in-out infinite,
+  movimiento3 1.7s ease-in-out infinite;
+  left: @atomSize*3/2;
+  top: -@atomSize;
+  z-index: 1;
+}
+
+@keyframes movimiento3 {
+
+  49.9% {
+    z-index: 1;
+  }
+  50% {
+    left: -@atomSize*3/2;
+    z-index: -1;
+  }
+
+  100% {
+    z-index: -1;
+  }
+}
+
+.electron:nth-child(5), .electron:nth-child(8) {
+
+  top: @atomSize;
+  left: @atomSize*3/2;
+  animation:movimiento3 1.5s ease-in-out infinite,
+  agrandar 1.7s linear infinite ,
+  movimiento4 1.7s ease-in-out infinite;
+
+}
+
+@keyframes movimiento4 {
+
+  49.9% {
+    z-index: 1;
+  }
+  50% {
+    top: -@atomSize;
+    z-index: -1;
+  }
+
+  100% {
+    z-index: -1;
+  }
+}
+
+.electron:nth-child(n+6) {
+  animation-delay: .5s;
+}

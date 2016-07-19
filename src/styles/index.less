@@ -1,0 +1,249 @@
+@import "roboto";
+@import "atom";
+
+@purple: #2f3241;
+@lightPurple: #464d72;
+@cyan: #9feaf9;
+@dimCyan: #74b1be;
+
+
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: @purple;
+  color: @dimCyan;
+  font-family: Roboto, sans-serif;
+  font-size: 1vw;
+}
+
+
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  padding: 2rem;
+  opacity: 0;
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.75s opacity ease-in;
+
+  &:not(.swiper-slide--main):after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    height: 0.5rem;
+    width: 0.5rem;
+    background: linear-gradient(to bottom, @dimCyan, rgba(0,0,0,0) 90%);
+    border-radius: 100%;
+    transition: 0.2s transform ease-in-out;
+  }
+
+  &.swiper-slide-active {
+    opacity: 1;
+
+    &:after {
+      animation: 2.5s linear 0s infinite electronStraightLine;
+    }
+  }
+
+  > * {
+    margin: 0 auto;
+  }
+}
+
+.swiper-slide--align-to-bottom {
+  align-items: flex-end;
+  padding-bottom: 0;
+}
+
+
+
+.heading,
+.sub-heading {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+.heading {
+  color: @cyan;
+  font-size: 8.2rem;
+}
+
+.sub-heading {
+  color: @dimCyan;
+  font-size: 5.5rem;
+}
+
+
+
+a {
+  &,
+  &:active,
+  &:hover,
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      left: 0.5rem;
+      bottom: 2px;
+      right: 0.5rem;
+      height: 2px;
+      background: @lightPurple;
+      transition: 0.5s background;
+      z-index: -1;
+    }
+  }
+
+  &:hover {
+    &:after {
+      background: @dimCyan;
+    }
+  }
+}
+
+.bullet-points {
+  list-style-type: circle;
+  color: @cyan;
+  text-align: left;
+
+  code {
+    overflow: inherit;
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+img {
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+.image--full-width {
+  display: block;
+  height: auto;
+}
+
+
+
+.codeblock--small {
+  font-size: 3rem;
+}
+
+pre,
+code {
+  text-align: left;
+}
+
+code {
+  white-space: pre-wrap;
+}
+
+
+
+.app-icons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+
+  li {
+    flex: 1;
+  }
+}
+
+.app-icon {
+  max-height: 8rem;
+}
+
+.large-app-icon {
+  width: 20vw;
+}
+
+.book-cover {
+  display: block;
+  max-height: 80vh;
+}
+
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 5vw;
+}
+
+
+
+@keyframes electronStraightLine {
+  0% {
+    bottom: 0;
+    transform: scale(0.2);
+  }
+
+  40% {
+    bottom: 40%;
+  }
+
+  45% {
+    bottom: 45%;
+  }
+
+  50% {
+    bottom: 50%;
+    transform: scale(1.2);
+  }
+
+  55% {
+    bottom: 55%;
+  }
+
+  60% {
+    bottom: 60%;
+  }
+
+  95% {
+    right: 1rem;
+    bottom: 110%;
+  }
+
+  96% {
+    right: -10%;
+    bottom: 110%;
+    transform: scale(0.2);
+  }
+
+  97% {
+    right: -10%;
+    bottom: -10%;
+  }
+
+  98% {
+    right: 1rem;
+  }
+
+  99% {
+    bottom: -10%;
+  }
+}

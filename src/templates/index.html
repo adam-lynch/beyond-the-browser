@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beyond the browser: from Web apps to desktop apps</title>
+    <link rel="stylesheet" href="third-party.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% include 'slides.html' %}
+        </div>
+
+        {% if shouldIncludePagination %}
+        <div class="swiper-pagination"></div>
+        {% endif %}
+
+        {% if shouldIncludeNavigation %}
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        {% endif %}
+
+        {% if shouldIncludeScrollbar %}
+        <div class="swiper-scrollbar"></div>
+        {% endif %}
+    </div>
+
+    <script src="third-party.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
