@@ -5,6 +5,8 @@ A talk in which I take a look at what it's like to develop desktop applications 
 
 ## Building the slides
 
-1. `npm i -g gulp`
-2. `npm i`
-2. `gulp`
+1. `npm i -g bower`
+2. `npm i -g gulp`
+3. `bower i`
+4. `npm i`
+5. `gulp`
