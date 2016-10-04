@@ -47,7 +47,7 @@ new Chart(packageManagersChartCanvas, {
                 borderWidth: 1,
                 hoverBackgroundColor: "rgba(159, 234, 249, 0.4)",
                 hoverBorderColor: "rgba(159, 234, 249, 1)",
-                data: [34297, 128471, 158310, 334290, 64466, 112110, 89975, 123945Updatinh ]
+                data: [34297, 128471, 158310, 334290, 64466, 112110, 89975, 123945]
             }
         ]
     },
